@@ -38,5 +38,6 @@ const App = () => (
       <Column title="Quantity" dataIndex="Quantity" key="quantity" />
     </ColumnGroup>
   </Table>
+  
 );
 export default App;

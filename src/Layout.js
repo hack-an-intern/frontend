@@ -4,6 +4,8 @@ import { Col, Row } from 'antd';
 import Graph from './components/Graph';
 import Buysell from './components/Buysell';
 import Table from './components/Table';
+import TransactionHistory from './components/TransactionHistory';
+import Portfolio from './components/Portfolio'
 const { Header, Content, Footer } = Layout;
 const Container = () => (
   <Layout className="layout">
@@ -38,16 +40,26 @@ const Container = () => (
       </Breadcrumb>
       <div className="site-layout-content">
       <Row>
-        <Col span={12}>
+        <Col span={18}>
           <Graph/>
         </Col>
-        <Col span={12} style={{padding: "30px"}}>
+        <Col span={6} style={{padding: "30px"}}>
           {/* <Graph/> */}
           <Buysell/>
         </Col>
       </Row>
       <Row>
+        <Col span={8}>
           <Table/>
+        </Col>
+        <Col span={8} style={{padding: "30px"}}>
+          {/* <Graph/> */}
+          <TransactionHistory/>
+        </Col>
+        <Col span={8} style={{padding: "30px"}}>
+          {/* <Graph/> */}
+          <Portfolio/>
+        </Col>
       </Row>
       </div>
     </Content>
