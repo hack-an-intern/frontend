@@ -12,14 +12,14 @@ class Graph extends Component {
 	}
 	
 	render() {
-		var limit = 50000;
+		var limit = 500;
 		var y = 100;    
 		var data = [];
 		var dataSeries = { type: "line" };
 		var dataPoints = [];
-		
+		// can enter data from here..
 		for (var i = 0; i < limit; i += 1) {
-			y += Math.round(Math.random() * 10 - 5);
+			y += 7;
 			dataPoints.push({
 				x: i,
 				y: y
@@ -29,6 +29,7 @@ class Graph extends Component {
 		data.push(dataSeries);
 		
 		const spanStyle = {
+            innerWidth:'50%',
 			position:'absolute', 
 			top: '10px',
 			fontSize: '20px', 
@@ -50,13 +51,25 @@ class Graph extends Component {
 		startTime = new Date();
 				
 		return (
-		<div>
-			<CanvasJSChart options = {options} 
-				 onRef={ref => this.chart = ref}
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-			<span id="timeToRender" style={spanStyle}></span>
-		</div>
+            <div>
+            <div>
+                <CanvasJSChart options = {options} 
+                    onRef={ref => this.chart = ref}
+                />
+                {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+                <span id="timeToRender" style={spanStyle}></span>
+            </div>
+            <div>
+                <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked/>
+                <label className="btn btn-outline-primary" for="btnradio1">Days</label>
+                <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked/>
+                <label className="btn btn-outline-primary" for="btnradio2">Week</label>
+                <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked/>
+                <label className="btn btn-outline-primary" for="btnradio3">Month</label>
+                <input type="radio" className="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked/>
+                <label className="btn btn-outline-primary" for="btnradio4">Year</label>
+            </div>
+        </div>
 		);
 	} 			
 }
