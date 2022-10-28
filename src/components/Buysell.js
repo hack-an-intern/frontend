@@ -23,7 +23,7 @@ const Buysell = () => {
           };
     return <div>
         <>
-        <Tabs defaultActiveKey="1">
+        <Tabs centered="True" align="middle" defaultActiveKey="1">
         <Tabs.TabPane tab="BUY" key="1">
         <Select
             showSearch
