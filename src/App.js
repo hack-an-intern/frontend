@@ -1,22 +1,21 @@
 
 import './App.css';
-import Graph from './components/Graph';
-import Buysell from './components/Buysell';
+
 import classes from './css/layout.module.css';
-import { Button } from 'antd';
-import { Col, Row } from 'antd';
+import Container from './Layout.js';
+
 function App() {
   return (
     <>
-      <Row>
+      <Container/>
+      {/* <Row>
         <Col span={12}>
           <Graph/>
         </Col>
         <Col span={12}>
-          {/* <Graph/> */}
           <Buysell/>
         </Col>
-      </Row>
+      </Row> */}
     </>
   );
 }
