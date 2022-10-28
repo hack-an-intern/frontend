@@ -3,6 +3,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import Graph from './components/Graph';
 import Buysell from './components/Buysell';
+import TransactionHistory from './components/TransactionHistory';
 const { Header, Content, Footer } = Layout;
 const Container = () => (
   <Layout className="layout">
@@ -37,13 +38,16 @@ const Container = () => (
       </Breadcrumb>
       <div className="site-layout-content">
       <Row>
-        <Col span={12}>
+        <Col span={18}>
           <Graph/>
         </Col>
-        <Col span={12} style={{padding: "30px"}}>
+        <Col span={6} style={{padding: "30px"}}>
           {/* <Graph/> */}
           <Buysell/>
         </Col>
+      </Row>
+      <Row>
+        <TransactionHistory/>
       </Row>
       </div>
     </Content>
