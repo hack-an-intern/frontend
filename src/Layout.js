@@ -1,8 +1,9 @@
 import { Breadcrumb, Layout, Menu } from 'antd';
-import React from 'react';
+import React, { Component } from 'react';
 import { Col, Row } from 'antd';
 import Graph from './components/Graph';
 import Buysell from './components/Buysell';
+import Table from './components/Table';
 const { Header, Content, Footer } = Layout;
 const Container = () => (
   <Layout className="layout">
@@ -44,6 +45,9 @@ const Container = () => (
           {/* <Graph/> */}
           <Buysell/>
         </Col>
+      </Row>
+      <Row>
+          <Table/>
       </Row>
       </div>
     </Content>

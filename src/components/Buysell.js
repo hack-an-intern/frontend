@@ -67,7 +67,7 @@ const Buysell = () => {
       <Radio.Button value="b">Limit Order</Radio.Button>
     </Radio.Group>
     <InputNumber min={1} max={10} defaultValue={3} onChange={onChange1} />
-    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-success">Place Order</button>
     </div>;
 }
 
