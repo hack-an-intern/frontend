@@ -58,13 +58,13 @@ const Buyui = () => {
       </Col>
     </Row>
     <Row style={{marginTop: '20px'}}>
-      <Input placeholder="Number of stocks" />
+      <Input size={"large"} placeholder="Number of stocks" />
     </Row>
     {ordertype=="limit" && <Row style={{marginTop: '20px'}}>
-      <Input placeholder="Limit Value" />
+      <Input size={"large"} placeholder="Limit Value" />
     </Row>}
     <Row style={{marginTop: '20px'}}>
-    <Button style={{width: '100%'}} type="primary">Confirm Transaction</Button>
+    <Button size={"large"} style={{width: '100%'}} type="primary">Confirm Transaction</Button>
     </Row>
 
   </>
