@@ -1,7 +1,7 @@
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { Component } from 'react';
 import { Col, Row } from 'antd';
-import Graph from './components/Graph';
+import { Graph } from './components/Graph';
 import Buysell from './components/Buysell';
 import Table from './components/Table';
 import TransactionHistory from './components/TransactionHistory';
@@ -40,28 +40,28 @@ const Container = () => (
         <Breadcrumb.Item>App</Breadcrumb.Item>
       </Breadcrumb>
       <div className="site-layout-content">
-      <Row>
-        <Col span={18}>
-          <Graph/>
-        </Col>
-        <Col span={6} style={{padding: "30px"}}>
-          {/* <Graph/> */}
-          <Buysell/>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={8}style={{padding: "30px"}}>
-          <Table/>
-        </Col>
-        <Col span={8} style={{padding: "30px"}}>
-          {/* <Graph/> */}
-          <TransactionHistory/>
-        </Col>
-        <Col span={8} style={{padding: "25px",}}>
-          {/* <Graph/> */}
-          <Newport/>
-        </Col>
-      </Row>
+        <Row>
+          <Col span={18}>
+            <Graph />
+          </Col>
+          <Col span={6} style={{ padding: "30px" }}>
+            {/* <Graph/> */}
+            <Buysell />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={8} style={{ padding: "30px" }}>
+            <Table />
+          </Col>
+          <Col span={8} style={{ padding: "30px" }}>
+            {/* <Graph/> */}
+            <TransactionHistory />
+          </Col>
+          <Col span={8} style={{ padding: "25px", }}>
+            {/* <Graph/> */}
+            <Newport />
+          </Col>
+        </Row>
       </div>
     </Content>
     <Footer
