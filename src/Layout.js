@@ -1,14 +1,27 @@
 import { Breadcrumb, Layout, Menu, Typography } from 'antd';
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import { Graph } from './components/Graph';
 import Buysell from './components/Buysell';
 import Table from './components/Table';
+import API from './api';
 import TransactionHistory from './components/TransactionHistory';
 // import Portfolio from './components/Portfolio'
 import Newport from './components/Newport'
 const { Header, Content, Footer } = Layout;
-const Container = () => (
+
+const Container = () => {
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+    API.get("/price")
+    .then(res =>{
+      console.log("sdf",res.data)
+      setPrice(res.data);
+    })
+    .catch(err =>{
+      console.log(err);})
+  }, [])
+  return(
   <Layout className="layout">
     <Header>
       <div className="logo" />
@@ -44,7 +57,8 @@ const Container = () => (
             </Row>
             <Row style={{marginBottom: "20px"}}>
               <Typography.Title level={1} style={{ margin: 0, color:'#FFFFFF'}}>
-                ₹ 1,00,000
+                {console.log("price", price)}
+                ₹ {price[price.length-1].price}
               </Typography.Title>
               <Typography.Title level={6} style={{color:'#00d09c', fontSize:'1rem', fontWeight:'normal', margin: 0 }}>
                 +4000 (4.00%)
@@ -81,5 +95,5 @@ const Container = () => (
       <p style={{color:"white"}}>Design and Created by it_works_on_local ©2022</p>
     </Footer>
   </Layout>
-);
+)};
 export default Container;
