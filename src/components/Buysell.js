@@ -62,17 +62,32 @@ const Buysell = () => {
         console.log(err);
       })
   }
+  let items = [
+    { label: 'Buy', value: 'buy', key: 'buy', children: <Buyui/> },
+    { label: 'Sell', value: 'sell', key: 'sell', children: <Buyui/> },    
+  ];
   return <div style={{backgroundColor:"#363636",paddingBottom:"20px"}} >
      <div style={{backgroundColor:"#363636"}}>
     <>
-      <Tabs type="card"  defaultActiveKey="1">
-        <Tabs.TabPane style={{color: "red !important"  }} tab="BUY" key="1" align="left">
+      {/* <Tabs type="card"  defaultActiveKey="1">
+        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="BUY" key="1" align="left">
           <Buyui />
         </Tabs.TabPane>
         <Tabs.TabPane style={{color: "#FFFFFF"}} tab="SELL" key="2" align="right">
           <Buyui />
         </Tabs.TabPane>
-      </Tabs>
+      </Tabs> */}
+      <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button onClick={()=> setTradeType("buy")} class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Buy</button>
+    <button onClick={()=> setTradeType("sell")} class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Sell</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><Buyui/></div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
+</div>
+
     </>
   </div>
   <div style={{backgroundColor:"#363636",margin:"20px"}} >

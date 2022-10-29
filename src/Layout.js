@@ -53,7 +53,7 @@ const Container = () => (
 
               <Graph />
           </Col>
-          <Col offset={2} span={6}>
+          <Col offset={1} span={6}>
             {/* <Graph/> */}
             <Buysell />
           </Col>

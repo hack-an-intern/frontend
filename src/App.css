@@ -46,22 +46,18 @@
 /* .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
-.ant-layout-footer{
+button.nav-link{
+  width: 50% !important;
   background-color: #010101 !important;
 }
-
-.ant-layout-footer{
-  color: white;
+button.active{
+  background-color: #363636 !important;
+  border: none !important;
+  color: white !important;
 }
-
-.ant-col-12 div{
-  border-radius: 6px;
+.nav-tabs{
+  border-bottom: none !important;
 }
-
-.ant-col-6 div{
-  border-radius: 6px;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
