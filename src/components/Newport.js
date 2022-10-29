@@ -1,9 +1,10 @@
 import "antd/dist/antd.css";
 // import "../css/App.css";
 import { Button, Typography, Table, Modal, Input } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-
+import API from '../api'
+import { toast, ToastContainer } from "react-toastify";
 function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
@@ -14,26 +15,26 @@ function App() {
       fiat: "45",
     },
     {
-        name: "Ved",
-        stocks: "32",
-        fiat: "45",
+      name: "Ved",
+      stocks: "32",
+      fiat: "45",
     },
     {
-        name: "Ved",
-        stocks: "32",
-        fiat: "45",
+      name: "Ved",
+      stocks: "32",
+      fiat: "45",
     },
     {
-        name: "Ved",
-        stocks: "32",
-        fiat: "45",
+      name: "Ved",
+      stocks: "32",
+      fiat: "45",
     },
     {
-        name: "Ved",
-        stocks: "32",
-        fiat: "45",
+      name: "Ved",
+      stocks: "32",
+      fiat: "45",
     },
-    
+
   ]);
   const columns = [
     {
@@ -75,55 +76,83 @@ function App() {
     setIsEditing(false);
     setEditingStudent(null);
   };
+  useEffect(() => {
+    API.get('/users')
+      .then(res => {
+        console.log("response =", res.data);
+        setDataSource(res.data)
+      });
+  }, []);
   return (
-    <div style={{backgroundColor: "#363636", padding: '20px'}}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
+    <div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
       {/* <header className="App-header"> */}
-        <Table columns={columns} pagination={false} dataSource={dataSource}></Table>
-        <Modal
-          title="Edit Student"
-          visible={isEditing}
-          okText="Save"
-          onCancel={() => {
-            resetEditing();
-          }}
-          onOk={() => {
-            setDataSource((pre) => {
-              return pre.map((student) => {
-                if (student.id === editingStudent.id) {
-                  return editingStudent;
-                } else {
-                  return student;
-                }
-              });
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <Table columns={columns} pagination={false} dataSource={dataSource}></Table>
+      <Modal
+        title="Edit Student"
+        visible={isEditing}
+        okText="Save"
+        onCancel={() => {
+          resetEditing();
+        }}
+        onOk={() => {
+          setDataSource((pre) => {
+            let newdata = pre.map((student) => {
+              if (student.id === editingStudent.id) {
+                return editingStudent;
+              } else {
+                return student;
+              }
             });
-            resetEditing();
+            console.log("newdata", newdata);
+            API.put(`/users/${editingStudent.id}/`, editingStudent)
+            .then(res => {
+              toast.success("User updated successfully")
+            })
+            .catch(err => {
+              toast.error("Error updating user")
+            });
+            return newdata;
+          });
+          resetEditing();
+        }}
+      >
+        <Input
+          value={editingStudent?.name}
+          onChange={(e) => {
+            setEditingStudent((pre) => {
+              return { ...pre, name: e.target.value };
+            });
           }}
-        >
-          <Input
-            value={editingStudent?.name}
-            onChange={(e) => {
-              setEditingStudent((pre) => {
-                return { ...pre, name: e.target.value };
-              });
-            }}
-          />
-          <Input
-            value={editingStudent?.stocks}
-            onChange={(e) => {
-              setEditingStudent((pre) => {
-                return { ...pre, stocks: e.target.value };
-              });
-            }}
-          />
-          <Input
-            value={editingStudent?.fiat}
-            onChange={(e) => {
-              setEditingStudent((pre) => {
-                return { ...pre, fiat: e.target.value };
-              });
-            }}
-          />
-        </Modal>
+        />
+        <Input
+          value={editingStudent?.stocks}
+          onChange={(e) => {
+            setEditingStudent((pre) => {
+              return { ...pre, stocks: e.target.value };
+            });
+          }}
+        />
+        <Input
+          value={editingStudent?.fiat}
+          onChange={(e) => {
+            setEditingStudent((pre) => {
+              return { ...pre, fiat: e.target.value };
+            });
+          }}
+        />
+      </Modal>
       {/* </header> */}
     </div>
   );

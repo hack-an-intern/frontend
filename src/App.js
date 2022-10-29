@@ -3,6 +3,7 @@ import './App.css';
 import 'antd/dist/antd.min.css';
 import classes from './css/layout.module.css';
 import Container from './Layout.js';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
