@@ -5,7 +5,8 @@ import Graph from './components/Graph';
 import Buysell from './components/Buysell';
 import Table from './components/Table';
 import TransactionHistory from './components/TransactionHistory';
-import Portfolio from './components/Portfolio'
+// import Portfolio from './components/Portfolio'
+import Newport from './components/Newport'
 const { Header, Content, Footer } = Layout;
 const Container = () => (
   <Layout className="layout">
@@ -49,16 +50,16 @@ const Container = () => (
         </Col>
       </Row>
       <Row>
-        <Col span={8}>
+        <Col span={8}style={{padding: "30px"}}>
           <Table/>
         </Col>
         <Col span={8} style={{padding: "30px"}}>
           {/* <Graph/> */}
           <TransactionHistory/>
         </Col>
-        <Col span={8} style={{padding: "30px"}}>
+        <Col span={8} style={{padding: "25px",}}>
           {/* <Graph/> */}
-          <Portfolio/>
+          <Newport/>
         </Col>
       </Row>
       </div>
