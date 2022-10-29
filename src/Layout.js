@@ -1,4 +1,4 @@
-import { Breadcrumb, Layout, Menu } from 'antd';
+import { Breadcrumb, Layout, Menu, Typography } from 'antd';
 import React, { Component } from 'react';
 import { Col, Row } from 'antd';
 import { Graph } from './components/Graph';
@@ -16,18 +16,13 @@ const Container = () => (
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
-        items={new Array(15).fill(null).map((_, index) => {
-          const key = index + 1;
-          return {
-            key,
-            label: `nav ${key}`,
-          };
-        })}
       />
     </Header>
     <Content
       style={{
         padding: '0 50px',
+        backgroundColor: '#010101',
+        color: 'white',
       }}
     >
       <Breadcrumb
@@ -42,7 +37,21 @@ const Container = () => (
       <div className="site-layout-content">
         <Row>
           <Col span={16}>
-            <Graph />
+          <Row>
+            <Typography.Title level={3} style={{ fontWeight:'normal', color:'#FFFFFF', margin: 0 }}>
+                Market Price
+              </Typography.Title>
+            </Row>
+            <Row style={{marginBottom: "20px"}}>
+              <Typography.Title level={1} style={{ margin: 0, color:'#FFFFFF'}}>
+                ₹ 1,00,000
+              </Typography.Title>
+              <Typography.Title level={6} style={{color:'#00d09c', fontSize:'1rem', fontWeight:'normal', margin: 0 }}>
+                +4000 (4.00%)
+              </Typography.Title>
+            </Row>
+
+              <Graph />
           </Col>
           <Col offset={2} span={6}>
             {/* <Graph/> */}
