@@ -3,6 +3,8 @@
   text-align: center;
 }
 .ant-tabs-tab{
+  width:50% !important;
+  flex-basis: 50% !important;
   background-color: #010101 !important;
 }
 .ant-tabs-tab-active{
@@ -11,6 +13,15 @@
 .ant-tabs-tab-btn{
   color: #fff !important;
   font-weight: 900;
+}
+.ant-tabs-nav-list{
+  width: 102%;
+}
+.ant-col-offset-2{
+  margin-top: 90px;
+}
+.ant-col-offset-2 div{
+  border-radius: 6px;
 }
 .ant-tabs-tab{
   border: none !important;
