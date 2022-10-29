@@ -97,9 +97,13 @@ const App = () => {
     API.get('/limitorder/')
       .then(res => {
         let data = res.data;
+        console.log(data);
         let buy = [];
         let sell = [];
         for (let i = 0; i < data.length; i++) {
+          // if (data[i] == null) continue;
+          data[i].user = data[i]?.user?.name;
+
           if (data[i].type === 'buy') {
             buy.push(data[i]);
           }
