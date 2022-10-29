@@ -13,9 +13,15 @@ const getseries = (data) => (
 	[
 		{
 			// startpoint: 1589016541000,
+			name: 'Price',
+			type: 'spline',
 			data: data,
 			colors: ['#36056E'],
 			includeInDataExport: true,
+
+			tooltip: {
+				valueDecimals: 2
+			},
 
 		}
 	]
@@ -30,10 +36,10 @@ const getconfig = (data) => {
 			title: {
 				text: 'My stock chart'
 			},
-			chart: {
-				backgroundColor: '#ddddff',
+			// chart: {
+			// 	backgroundColor: '#ddddff',
 
-			},
+			// },
 			series: getseries(data),
 
 			rangeSelector: {
@@ -60,6 +66,7 @@ const getconfig = (data) => {
 				inputEnabled: false, // it supports only days
 				selected: 4 // all
 			},
+
 		}
 	)
 };
