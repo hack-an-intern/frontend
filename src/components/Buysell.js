@@ -20,6 +20,9 @@ const defaultProps = {};
  * 
  */
 const Buyui = () => {
+  
+}
+const Buysell = () => {
 
   const [id, setId] = useState();
   const [ordertype, setOrderType] = useState('limit');
@@ -59,8 +62,21 @@ const Buyui = () => {
         console.log(err);
       })
   }
-  return (<>
-    <Row style={{ marginTop: '20px' }} align='middle'>
+  return <div style={{backgroundColor:"#363636",paddingBottom:"20px"}} >
+     <div style={{backgroundColor:"#363636"}}>
+    <>
+      <Tabs type="card"  defaultActiveKey="1">
+        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="BUY" key="1" align="left">
+          <Buyui />
+        </Tabs.TabPane>
+        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="SELL" key="2" align="right">
+          <Buyui />
+        </Tabs.TabPane>
+      </Tabs>
+    </>
+  </div>
+  <div style={{backgroundColor:"#363636",margin:"20px"}} >
+  <Row style={{marginTop: '20px'}} align='middle'>
       <Col className="gutter-row" span={10}>
         <Select
           showSearch
@@ -104,27 +120,8 @@ const Buyui = () => {
     <Row style={{ marginTop: '20px' }}>
       <Button size={"large"} onClick={handleSubmit} style={{ width: '100%' }} type="primary">Confirm Transaction</Button>
     </Row>
-
-  </>
-  )
-}
-const Buysell = () => {
-
-  const onChange1 = (value) => {
-    console.log('changed', value);
-  };
-  return <div style={{ backgroundColor: "#363636", padding: '20px' }}>
-    <>
-      <Tabs type="card" defaultActiveKey="1">
-        <Tabs.TabPane style={{ color: "#FFFFFF" }} tab="BUY" key="1" align="left">
-          <Buyui />
-        </Tabs.TabPane>
-        <Tabs.TabPane style={{ color: "#FFFFFF" }} tab="SELL" key="2" align="right">
-          <Buyui />
-        </Tabs.TabPane>
-      </Tabs>
-    </>
-  </div>;
+  </div>
+  </div>
 }
 
 Buysell.propTypes = propTypes;
