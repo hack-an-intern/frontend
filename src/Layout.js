@@ -2,12 +2,12 @@ import { Breadcrumb, Layout, Menu, Typography } from 'antd';
 import React, { Component, useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import { Graph } from './components/Graph';
-import Buysell from './components/Buysell';
-import Table from './components/Table';
-import API from './api';
+import Trade from './components/Trade';
+import OrderBook from './components/OrderBook';
 import TransactionHistory from './components/TransactionHistory';
+import UserPortfolio from './components/UserPortfolio'
+import API from './api';
 // import Portfolio from './components/Portfolio'
-import Newport from './components/Newport'
 
 const { Header, Content, Footer } = Layout;
 const Container = () => {
@@ -80,12 +80,12 @@ const Container = () => {
             </Col>
             <Col offset={1} span={6}>
               {/* <Graph/> */}
-              <Buysell />
+              <Trade />
             </Col>
           </Row>
           <Row align='top' style={{marginTop: '30px'}}>
             <Col span={9}>
-              <Table  height={300}/>
+              <OrderBook  height={300}/>
             </Col>
             <Col offset={1} span={6}>
               {/* <Graph/> */}
@@ -93,7 +93,7 @@ const Container = () => {
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <Newport  height={300}/>
+              <UserPortfolio  height={300}/>
             </Col>
           </Row>
         </div>

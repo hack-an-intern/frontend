@@ -69,7 +69,7 @@ export default function TransactionHistory(props) {
     },
   ];
 
-  return (<div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>Transaction History</Typography.Title>
+  return (<div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '44px', color: '#FFFFFF', }}>Transaction History</Typography.Title>
     <Table scroll={{ y: props.height }} dataSource={data} pagination={false} columns={columns} />
   </div>
   )
