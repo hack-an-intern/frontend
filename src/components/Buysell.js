@@ -59,7 +59,7 @@ const Buysell = () => {
     API.post('/trade', data)
       .then(res => {
         console.log(res);
-        window.location.reload();
+        // window.location.reload();
         toast.success("Trade Successful");
 
       })
