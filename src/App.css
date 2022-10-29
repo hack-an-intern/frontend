@@ -46,7 +46,18 @@
 /* .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
-
+button.nav-link{
+  width: 50% !important;
+  background-color: #010101 !important;
+}
+button.active{
+  background-color: #363636 !important;
+  border: none !important;
+  color: white !important;
+}
+.nav-tabs{
+  border-bottom: none !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
