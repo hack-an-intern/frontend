@@ -38,7 +38,7 @@ const App = (props) => {
     },
     {
       key: "5",
-      title: "Actions",
+      title: "Cancel",
       render: (record) => {
         return (
           <>
