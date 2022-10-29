@@ -62,13 +62,11 @@ const Container = () => {
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
         <div className="site-layout-content">
+          <Row>                <Typography.Title level={3} style={{ fontWeight: 'normal', color: '#FFFFFF', margin: 0 }}>
+                  Market Price
+                </Typography.Title></Row>
           <Row>
             <Col span={16}>
-              <Row>
-                <Typography.Title level={3} style={{ fontWeight: 'normal', color: '#FFFFFF', margin: 0 }}>
-                  Market Price
-                </Typography.Title>
-              </Row>
               <Row style={{ marginBottom: "20px" }}>
                 <Typography.Title level={1} style={{ margin: 0, color: '#FFFFFF' }}>
                   ₹ {price}
