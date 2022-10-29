@@ -46,6 +46,21 @@
 /* .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
+.ant-layout-footer{
+  background-color: #010101 !important;
+}
+
+.ant-layout-footer{
+  color: white;
+}
+
+.ant-col-12 div{
+  border-radius: 6px;
+}
+
+.ant-col-6 div{
+  border-radius: 6px;
+}
 
 .App-logo {
   height: 40vmin;
