@@ -80,7 +80,7 @@ function App() {
   };
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUserdata);
+    dispatch(getUserdata());
     // API.get('/users')
     //   .then(res => {
     //     console.log("response =", res.data);
