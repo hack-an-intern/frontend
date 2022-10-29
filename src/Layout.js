@@ -78,7 +78,7 @@ const Container = () => (
         textAlign: 'center',
       }}
     >
-      Design and Created by it_works_on_local ©2022
+      <p style={{color:"white"}}>Design and Created by it_works_on_local ©2022</p>
     </Footer>
   </Layout>
 );

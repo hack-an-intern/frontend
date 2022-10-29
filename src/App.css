@@ -46,6 +46,7 @@
 /* .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
+<<<<<<< HEAD
 button.nav-link{
   width: 50% !important;
   background-color: #010101 !important;
@@ -58,6 +59,24 @@ button.active{
 .nav-tabs{
   border-bottom: none !important;
 }
+=======
+.ant-layout-footer{
+  background-color: #010101 !important;
+}
+
+.ant-layout-footer{
+  color: white;
+}
+
+.ant-col-12 div{
+  border-radius: 6px;
+}
+
+.ant-col-6 div{
+  border-radius: 6px;
+}
+
+>>>>>>> ec008e66d7d139cde05c1dae83c57c28e5566cc3
 .App-logo {
   height: 40vmin;
   pointer-events: none;
