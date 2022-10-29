@@ -58,15 +58,15 @@ const Container = () => (
             <Buysell />
           </Col>
         </Row>
-        <Row>
-          <Col span={8} style={{ padding: "30px" }}>
+        <Row align='top'>
+          <Col span={12} style={{ padding: "30px" }}>
             <Table />
           </Col>
-          <Col span={8} style={{ padding: "30px" }}>
+          <Col span={6} style={{ padding: "30px" }}>
             {/* <Graph/> */}
             <TransactionHistory />
           </Col>
-          <Col span={8} style={{ padding: "25px", }}>
+          <Col span={6} style={{ padding: "25px", }}>
             {/* <Graph/> */}
             <Newport />
           </Col>
