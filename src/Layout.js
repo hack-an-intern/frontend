@@ -8,8 +8,6 @@ import API from './api';
 import TransactionHistory from './components/TransactionHistory';
 // import Portfolio from './components/Portfolio'
 import Newport from './components/Newport'
-import { useState, useEffect } from 'react';
-import API from './api';
 
 const { Header, Content, Footer } = Layout;
 const Container = () => {
@@ -22,6 +20,7 @@ const Container = () => {
       console.log("datasdfasdfasa", res.data);
       const dp = res.data;
       setPrice(dp[dp.length - 1].price);
+      
       if (dp.length > 1) {
         setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
       }
@@ -73,7 +72,7 @@ const Container = () => {
                   ₹ {price}
                 </Typography.Title>
                 <Typography.Title level={6} style={{ color: '#00d09c', fontSize: '1rem', fontWeight: 'normal', margin: 0 }}>
-                  +{pc}%)
+                  +{}({Math.round((pc + Number.EPSILON) * 100) / 100}%)
                 </Typography.Title>
               </Row>
 

@@ -85,8 +85,8 @@ const Buysell = () => {
       </Tabs> */}
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button onClick={() => setTradeType("buy")} class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Buy</button>
-            <button onClick={() => setTradeType("sell")} class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Sell</button>
+            <button onClick={() => setTradeType("buy")} style={{color: '#00d09c'}} class="nav-link active buy" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Buy</button>
+            <button onClick={() => setTradeType("sell")} style={{color: '#eb5b3c'}} class="nav-link sell" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Sell</button>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
