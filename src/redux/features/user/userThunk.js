@@ -4,11 +4,11 @@ import API from '../../../api'
 
 //ALL the Asyncronous logic for login will be here
 
-export const getUserdata = () => {
+export default function getUserdata(){
     return (dispatch, getState)=>{
     API.get('/users/')
     .then(res => {
-        dispatch(user.userSuccess());
+        dispatch(user.userSuccess(res.data));
     })
     .catch(err => {
         console.log(err);

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import API from '../api'
 import getUserdata from '../redux/features/user/userThunk';
+import { useSelector, useDispatch } from 'react-redux';
 import { toast, ToastContainer } from "react-toastify";
 function App() {
   const [isEditing, setIsEditing] = useState(false);
@@ -77,12 +78,14 @@ function App() {
     setIsEditing(false);
     setEditingStudent(null);
   };
+  const dispatch = useDispatch();
   useEffect(() => {
-    API.get('/users')
-      .then(res => {
-        console.log("response =", res.data);
-        setDataSource(res.data)
-      });
+    dispatch(getUserdata);
+    // API.get('/users')
+    //   .then(res => {
+    //     console.log("response =", res.data);
+    //     setDataSource(res.data)
+    //   });
   }, []);
   return (
     <div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
