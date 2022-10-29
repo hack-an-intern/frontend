@@ -10,7 +10,18 @@ import { toast, ToastContainer } from "react-toastify";
 function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
-  const [dataSource, setDataSource] = useState(useSelector(state => state.user.data));
+  const [dataSource, setDataSource] = useState(null);
+
+  useEffect(() => {
+    // dispatch(getUserdata());
+    API.get('/users')
+      .then(res => {
+
+        setDataSource(res.data);
+      })
+      .catch(err => { console.log(err) })
+  }, [])
+
   const columns = [
     {
       key: "2",
