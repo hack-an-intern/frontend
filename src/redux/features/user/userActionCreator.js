@@ -7,10 +7,11 @@ import {
 
 //ALL the action creator for login flow (userCheck->otpSend->login->logout)
 
-export const userSuccess = () => {
+export const userSuccess = (user) => {
 
     return {
-        type: USER_CHECK_SUCCESS
+        type: USER_CHECK_SUCCESS,
+        payload: user
     }
 
 
