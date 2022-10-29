@@ -10,34 +10,7 @@ import { toast, ToastContainer } from "react-toastify";
 function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
-  const [dataSource, setDataSource] = useState([
-    {
-      name: "Ved",
-      stocks: "32",
-      fiat: "45",
-    },
-    {
-      name: "Ved",
-      stocks: "32",
-      fiat: "45",
-    },
-    {
-      name: "Ved",
-      stocks: "32",
-      fiat: "45",
-    },
-    {
-      name: "Ved",
-      stocks: "32",
-      fiat: "45",
-    },
-    {
-      name: "Ved",
-      stocks: "32",
-      fiat: "45",
-    },
-
-  ]);
+  const [dataSource, setDataSource] = useState(useSelector(state => state.user.data));
   const columns = [
     {
       key: "2",
