@@ -75,13 +75,13 @@ const Buysell = () => {
   const onChange1 = (value) => {
     console.log('changed', value);
   };
-  return <div>
+  return <div style={{backgroundColor:"#363636", padding: '20px'}}>
     <>
-      <Tabs defaultActiveKey="1">
-        <Tabs.TabPane tab="BUY" key="1" align="left">
+      <Tabs type="card"  defaultActiveKey="1">
+        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="BUY" key="1" align="left">
           <Buyui />
         </Tabs.TabPane>
-        <Tabs.TabPane tab="SELL" key="2" align="right">
+        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="SELL" key="2" align="right">
           <Buyui />
         </Tabs.TabPane>
       </Tabs>

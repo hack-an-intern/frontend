@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 // import "../css/App.css";
-import { Button, Table, Modal, Input } from "antd";
+import { Button, Typography, Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
@@ -76,9 +76,9 @@ function App() {
     setEditingStudent(null);
   };
   return (
-    <div >
+    <div style={{backgroundColor: "#363636", padding: '20px'}}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
       {/* <header className="App-header"> */}
-        <Table columns={columns} dataSource={dataSource}></Table>
+        <Table columns={columns} pagination={false} dataSource={dataSource}></Table>
         <Modal
           title="Edit Student"
           visible={isEditing}

@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import 'antd/dist/antd.min.css';
 import classes from './css/layout.module.css';
 import Container from './Layout.js';
 

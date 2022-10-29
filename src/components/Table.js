@@ -59,16 +59,16 @@ const data_sell = [
 ];
 
 const App = () => (<>
-<div style={{border: '2px solid white', borderRadius:'15px', paddingBottom: '20px'}}>
-<Typography.Title level={2} style={{ textAlign: 'center' , marginBottom: '10px' }}>Order Book</Typography.Title>
+<div style={{paddingBottom: '20px', color:'#FFFFFF', backgroundColor: "#363636"}}>
+<Typography.Title level={2} style={{ textAlign: 'center' , marginBottom: '10px', color:'#FFFFFF',}}>Order Book</Typography.Title>
   <Row align='middle' justify='center'>
   {/* <Typography.Title level={2} style={{ marginBottom: '10px' }}>Order Book</Typography.Title> */}
     <Col style={{textAlign: 'center'}} span={10}>
-    <Typography.Title level={5} style={{ marginBottom: '10px' }}>Buy Orders</Typography.Title>
+    <Typography.Title level={5} style={{ marginBottom: '10px', color:'#FFFFFF', }}>Buy Orders</Typography.Title>
   <Table pagination={false} columns={columns} dataSource={data_buy}/>
   </Col>
   <Col offset={2} style={{textAlign: 'center'}} span={10}>
-  <Typography.Title level={5} style={{ marginBottom: '10px' }}>Sell Orders</Typography.Title>
+  <Typography.Title level={5} style={{ marginBottom: '10px', color:'#FFFFFF', }}>Sell Orders</Typography.Title>
   <Table pagination={false} columns={columns} dataSource={data_sell}/>
   </Col>
   </Row>

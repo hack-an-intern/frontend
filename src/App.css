@@ -2,6 +2,28 @@
 .App {
   text-align: center;
 }
+.ant-tabs-tab{
+  background-color: #010101 !important;
+}
+.ant-tabs-tab-active{
+  background-color: #363636 !important;
+}
+.ant-tabs-tab-btn{
+  color: #fff !important;
+  font-weight: 900;
+}
+.ant-tabs-tab{
+  border: none !important;
+}
+.ant-tabs-ink-bar{
+  display: none !important;
+} 
+/* .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: #FFFFFF !important;
+} */
+/* .ant-tabs-tab-btn{
+  color: #FFFFFF !important;
+} */
 
 .App-logo {
   height: 40vmin;
