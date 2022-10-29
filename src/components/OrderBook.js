@@ -20,6 +20,17 @@ const App = (props) => {
   const showPopconfirm =  () =>{
 
   }
+  const confirmDelete = (x) => {
+    console.log("id = ",x);
+    API.delete(`/limitorder/${x}/`)
+    .then(res => {
+      toast.success("Order deleted successfully");
+    })
+    .catch(err => {
+      console.log(err);
+      toast.error("Error deleting order");
+    })
+  }
   const columns = [
     {
       title: 'User',
@@ -42,12 +53,18 @@ const App = (props) => {
       render: (record) => {
         return (
           <>
-          
-            <DeleteOutlined
+            <Popconfirm
+                title="Are you sure to delete this order?"
+                onConfirm={()=>confirmDelete(record.id)}
+                // onCancel={cancel}
+                okText="Yes"
+                cancelText="No">
+            <a href="#"><DeleteOutlined
               onClick={() => {
                 showPopconfirm();
               }}
-            />
+            /></a>
+            </Popconfirm>
           </>
         );
       },

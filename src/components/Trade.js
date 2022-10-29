@@ -61,11 +61,14 @@ const Buysell = () => {
         console.log(res);
         // window.location.reload();
         toast.success("Trade Successful");
-
+        
       })
       .catch(err => {
-        console.log(err);
-        toast.error(err.message);
+        console.log("In er",err);
+        if(err.response)
+        toast.error(err.response.message);
+        else
+        toast.error("Something went wrong");
       })
   }
   let items = [
@@ -142,6 +145,7 @@ const Buysell = () => {
         <Button size={"large"} onClick={handleSubmit} style={{ width: '100%' }} type="primary">Confirm Transaction</Button>
       </Row>
     </div>
+    <ToastContainer />
   </div>
 }
 
