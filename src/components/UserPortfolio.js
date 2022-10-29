@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 // import "../css/App.css";
-import { Button, Typography, Table, Modal, Input } from "antd";
+import { Button, Typography, Table,Form, Modal, Input } from "antd";
 import { useState, useEffect } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import API from '../api'
@@ -76,7 +76,7 @@ function App(props) {
       />
       <Table scroll={{ y: props.height }} columns={columns} pagination={false} dataSource={dataSource}></Table>
       <Modal
-        title="Edit Student"
+        title="Edit User"
         visible={isEditing}
         okText="Save"
         onCancel={() => {
@@ -103,31 +103,40 @@ function App(props) {
           });
           resetEditing();
         }}
-      >
+      ><Form>
+        <Form.Item label="Name" required tooltip="This is a required field">
         <Input
           value={editingStudent?.name}
+          size={"large"}
+          style={{ marginBottom: "15x" }}
           onChange={(e) => {
             setEditingStudent((pre) => {
               return { ...pre, name: e.target.value };
             });
           }}
-        />
-        <Input
+        /></Form.Item>
+        <Form.Item label="Stocks" required tooltip="This is a required field">
+        <Input size={"large"}
           value={editingStudent?.stocks}
+          style={{ marginBottom: "15x" }}
           onChange={(e) => {
             setEditingStudent((pre) => {
               return { ...pre, stocks: e.target.value };
             });
           }}
-        />
+        /></Form.Item>
+        <Form.Item label="Fiat" required tooltip="This is a required field">
         <Input
           value={editingStudent?.fiat}
+          size={"large"}
           onChange={(e) => {
             setEditingStudent((pre) => {
               return { ...pre, fiat: e.target.value };
             });
           }}
         />
+        </Form.Item>
+        </Form>
       </Modal>
       {/* </header> */}
     </div>
