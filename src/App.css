@@ -17,11 +17,22 @@
 .ant-tabs-nav-list{
   width: 102%;
 }
+.ant-input-number-lg{
+  width: 100% !important;
+}
+.ant-input-number{
+  width: 100% !important;
+}
 .ant-col-offset-2{
   margin-top: 90px;
+  /* border: 2px solid #363636 ; */
+  /* border-radius: 6px; */
 }
 .ant-col-offset-2 div{
   border-radius: 6px;
+}
+.ant-tabs-card{
+  border: 2px solid #363636 ;
 }
 .ant-tabs-tab{
   border: none !important;
