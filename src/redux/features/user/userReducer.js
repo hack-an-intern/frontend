@@ -1,19 +1,9 @@
 import {
-    LOG_IN_REQUEST,
-    LOG_IN_SUCCESS,
-    LOG_IN_FAILURE,
-    LOG_OUT_REQUEST,
-    LOG_OUT_SUCCESS,
-    LOG_OUT_FAILURE,
-    OTP_SEND_REQUEST,
-    OTP_SEND_SUCCESS,
-    OTP_SEND_FAILURE,
     USER_CHECK_REQUEST,
     USER_CHECK_SUCCESS,
     USER_CHECK_FAILURE,
-    LOGIN_CLICK
 
-} from './loginType'
+} from './userType'
 
 
 

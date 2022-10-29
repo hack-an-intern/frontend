@@ -1,5 +1,4 @@
 import {
-
     USER_CHECK_SUCCESS,
 
 } from './userType'

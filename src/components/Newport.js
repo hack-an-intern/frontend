@@ -4,6 +4,7 @@ import { Button, Typography, Table, Modal, Input } from "antd";
 import { useState, useEffect } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import API from '../api'
+import getUserdata from '../redux/features/user/userThunk';
 import { toast, ToastContainer } from "react-toastify";
 function App() {
   const [isEditing, setIsEditing] = useState(false);
