@@ -29,6 +29,10 @@ const Buyui = () => {
     console.log('radio4 checked', value);
     setOrdertype(value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  }
   return (<>
     <Row style={{marginTop: '20px'}} align='middle'>
       <Col className="gutter-row" span={10}>
@@ -64,7 +68,7 @@ const Buyui = () => {
       <Input size={"large"} placeholder="Limit Value" />
     </Row>}
     <Row style={{marginTop: '20px'}}>
-    <Button size={"large"} style={{width: '100%'}} type="primary">Confirm Transaction</Button>
+    <Button size={"large"} onClick={handleSubmit} style={{width: '100%'}} type="primary">Confirm Transaction</Button>
     </Row>
 
   </>
