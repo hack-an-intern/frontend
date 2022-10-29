@@ -11,20 +11,20 @@ const defaultProps = {};
  * 
  */
 
-const Buysell = () => {
+    const Buysell = () => {
     const onChange = (value) => {
         console.log(`selected ${value}`);
         };
         const onSearch = (value) => {
         console.log('search:', value);
         };
-        const onChange1 = (value: number) => {
+        const onChange1 = (value) => {
             console.log('changed', value);
           };
     return <div>
         <>
-        <Tabs centered="True" align="middle" defaultActiveKey="1">
-        <Tabs.TabPane tab="BUY" key="1">
+        <Tabs  defaultActiveKey="1">
+        <Tabs.TabPane tab="BUY" key="1" align="left">
         <Select
             showSearch
             placeholder="Select the user"
@@ -39,7 +39,7 @@ const Buysell = () => {
         </Select>
 
         </Tabs.TabPane>
-        <Tabs.TabPane tab="SELL" key="2">
+        <Tabs.TabPane tab="SELL" key="2"align="right">
               <Select
             showSearch
             placeholder="Select the user"
