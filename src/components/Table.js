@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 
-const App = () => {
+const App = (props) => {
   // const [isEditing, setIsEditing] = useState(false);
   // const [editingStudent, setEditingStudent] = useState(null);
   // const onEditStudent = (record) => {
@@ -18,7 +18,7 @@ const App = () => {
   //   setEditingStudent(null);
   // };
   const showPopconfirm =  () =>{
-    
+
   }
   const columns = [
     {
@@ -145,11 +145,11 @@ const App = () => {
         {/* <Typography.Title level={2} style={{ marginBottom: '10px' }}>Order Book</Typography.Title> */}
         <Col style={{ textAlign: 'center' }} span={11}>
           <Typography.Title level={5} style={{ marginBottom: '10px', color: '#FFFFFF', }}>Buy Orders</Typography.Title>
-          <Table pagination={false} columns={columns} dataSource={dataBuy} />
+          <Table scroll={{ y: props.height }} pagination={false} columns={columns} dataSource={dataBuy} />
         </Col>
         <Col offset={2} style={{ textAlign: 'center' }} span={11}>
           <Typography.Title level={5} style={{ marginBottom: '10px', color: '#FFFFFF', }}>Sell Orders</Typography.Title>
-          <Table pagination={false} columns={columns} dataSource={dataSell} />
+          <Table scroll={{ y: props.height }} pagination={false} columns={columns} dataSource={dataSell} />
         </Col>
       </Row>
     </div>

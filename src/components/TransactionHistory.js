@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Table, Typography } from 'antd'
 import API from '../api';
 import { useSelector } from 'react-redux';
-export default function TransactionHistory() {
+export default function TransactionHistory(props) {
 
   const [data, setData] = useState([
     {
@@ -70,7 +70,7 @@ export default function TransactionHistory() {
   ];
 
   return (<div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>Transaction History</Typography.Title>
-    <Table dataSource={data} pagination={false} columns={columns} />
+    <Table scroll={{ y: props.height }} dataSource={data} pagination={false} columns={columns} />
   </div>
   )
 }

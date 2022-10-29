@@ -7,7 +7,7 @@ import API from '../api'
 import getUserdata from '../redux/features/user/userThunk';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast, ToastContainer } from "react-toastify";
-function App() {
+function App(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
   const [dataSource, setDataSource] = useState(null);
@@ -79,7 +79,7 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-      <Table columns={columns} pagination={false} dataSource={dataSource}></Table>
+      <Table scroll={{ y: props.height }} columns={columns} pagination={false} dataSource={dataSource}></Table>
       <Modal
         title="Edit Student"
         visible={isEditing}

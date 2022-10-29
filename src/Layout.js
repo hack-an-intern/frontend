@@ -41,7 +41,9 @@ const Container = () => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
+          style={{fontWeight: '900', color: 'white'}}
         />
+        KSE
       </Header>
       <Content
         style={{
@@ -83,17 +85,17 @@ const Container = () => {
               <Buysell />
             </Col>
           </Row>
-          <Row align='top'>
-            <Col span={12} style={{ padding: "30px" }}>
-              <Table />
+          <Row align='top' style={{marginTop: '30px'}}>
+            <Col span={9}>
+              <Table  height={300}/>
             </Col>
-            <Col span={6} style={{ padding: "30px" }}>
+            <Col offset={1} span={6}>
               {/* <Graph/> */}
-              <TransactionHistory />
+              <TransactionHistory height={300} />
             </Col>
-            <Col span={6} style={{ padding: "25px", }}>
+            <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <Newport />
+              <Newport  height={300}/>
             </Col>
           </Row>
         </div>
