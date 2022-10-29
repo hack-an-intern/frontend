@@ -1,8 +1,11 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { Col, Row, Input, Button } from 'antd';
 
 import { Tabs, Select, Radio, InputNumber } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import API from '../api';
+// import { Toast } from 'react-toastify/dist/components';
 
 const { Option } = Select;
 const propTypes = {};
@@ -18,13 +21,17 @@ const defaultProps = {};
  */
 const Buyui = () => {
 
-
-
+  const [id, setId] = useState();
+  const [ordertype, setOrderType] = useState('limit');
+  const [tradetype, setTradeType] = useState('buy');
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
 
   const usersList = useSelector(state => state.user.data);
-  const onChange = (value) => {
-    console.log(`selected ${value}`);
-  };
+  // const onChange = (value) => {
+  //   console.log(`selected ${value}`);
+
+  // };
   const onSearch = (value) => {
     console.log('search:', value);
   };
@@ -32,14 +39,25 @@ const Buyui = () => {
     { label: 'Market', value: 'market' },
     { label: 'Limit', value: 'limit' },
   ];
-  const [ordertype, setOrdertype] = useState('market');
   const onChangeOrdertype = ({ target: { value } }) => {
     console.log('radio4 checked', value);
-    setOrdertype(value);
+    setOrderType(value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
+    // console.log('submit');
+    let data = {
+      id, ordertype, tradetype, quantity, price
+    }
+    console.log(data);
+    API.post('/trade', data)
+      .then(res => {
+        console.log(res);
+
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
   return (<>
     <Row style={{ marginTop: '20px' }} align='middle'>
@@ -48,7 +66,7 @@ const Buyui = () => {
           showSearch
           placeholder="Select the user"
           optionFilterProp="children"
-          onChange={onChange}
+          onChange={(e) => { setId(e) }}
           onSearch={onSearch}
           size={"large"}
           style={{ width: '100%' }}
@@ -78,10 +96,10 @@ const Buyui = () => {
       </Col>
     </Row>
     <Row style={{ marginTop: '20px' }}>
-      <Input size={"large"} placeholder="Number of stocks" />
+      <InputNumber size={"large"} placeholder="Number of stocks" onChange={(e) => { setQuantity(e) }} required />
     </Row>
     {ordertype == "limit" && <Row style={{ marginTop: '20px' }}>
-      <Input size={"large"} placeholder="Limit Value" />
+      <InputNumber size={"large"} placeholder="Limit Value" onChange={(e) => { setPrice(e) }} required />
     </Row>}
     <Row style={{ marginTop: '20px' }}>
       <Button size={"large"} onClick={handleSubmit} style={{ width: '100%' }} type="primary">Confirm Transaction</Button>
