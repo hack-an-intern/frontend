@@ -20,7 +20,7 @@ const Container = () => {
       console.log("datasdfasdfasa", res.data);
       const dp = res.data;
       setPrice(dp[dp.length - 1].price);
-      
+
       if (dp.length > 1) {
         setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
       }
@@ -41,7 +41,7 @@ const Container = () => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
-          style={{fontWeight: '900', color: 'white'}}
+          style={{ fontWeight: '900', color: 'white' }}
         />
         KSE
       </Header>
@@ -63,8 +63,8 @@ const Container = () => {
         </Breadcrumb>
         <div className="site-layout-content">
           <Row>                <Typography.Title level={3} style={{ fontWeight: 'normal', color: '#FFFFFF', margin: 0 }}>
-                  Market Price
-                </Typography.Title></Row>
+            Market Price
+          </Typography.Title></Row>
           <Row>
             <Col span={16}>
               <Row style={{ marginBottom: "20px" }}>
@@ -72,20 +72,20 @@ const Container = () => {
                   ₹ {price}
                 </Typography.Title>
                 <Typography.Title level={6} style={{ color: '#00d09c', fontSize: '1rem', fontWeight: 'normal', margin: 0 }}>
-                  +{}({Math.round((pc + Number.EPSILON) * 100) / 100}%)
+                  +{ }({Math.round((pc + Number.EPSILON) * 100) / 100}%)
                 </Typography.Title>
               </Row>
 
               <Graph />
             </Col>
-            <Col style={{marginTop: '67px'}} offset={1} span={6}>
+            <Col style={{ marginTop: '67px' }} offset={1} span={6}>
               {/* <Graph/> */}
               <Trade />
             </Col>
           </Row>
-          <Row align='top' style={{marginTop: '30px'}}>
+          <Row align='top' style={{ marginTop: '30px' }}>
             <Col span={10}>
-              <OrderBook  height={300}/>
+              <OrderBook height={300} />
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
@@ -93,7 +93,7 @@ const Container = () => {
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <UserPortfolio  height={300}/>
+              <UserPortfolio height={300} />
             </Col>
           </Row>
         </div>
