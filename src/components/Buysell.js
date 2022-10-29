@@ -66,7 +66,7 @@ const Buysell = () => {
      <div style={{backgroundColor:"#363636"}}>
     <>
       <Tabs type="card"  defaultActiveKey="1">
-        <Tabs.TabPane style={{color: "#FFFFFF"}} tab="BUY" key="1" align="left">
+        <Tabs.TabPane style={{color: "red !important"  }} tab="BUY" key="1" align="left">
           <Buyui />
         </Tabs.TabPane>
         <Tabs.TabPane style={{color: "#FFFFFF"}} tab="SELL" key="2" align="right">
