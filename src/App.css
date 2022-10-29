@@ -1,52 +1,52 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 .App {
   text-align: center;
 }
-.ant-tabs-tab{
-  width:50% !important;
+.ant-tabs-tab {
+  width: 50% !important;
   flex-basis: 50% !important;
   background-color: #010101 !important;
 }
-.ant-tabs-tab-active{
+.ant-tabs-tab-active {
   background-color: #363636 !important;
 }
-.ant-tabs-tab-btn{
+.ant-tabs-tab-btn {
   color: #fff !important;
   font-weight: 900;
 }
-.ant-tabs-nav-list{
+.ant-tabs-nav-list {
   width: 102%;
 }
-.ant-input-number-lg{
+.ant-input-number-lg {
   width: 100% !important;
 }
-.ant-input-number{
+.ant-input-number {
   width: 100% !important;
 }
-.ant-col-offset-2{
-  margin-top: 90px;
+.ant-col-offset-2 {
+  /* margin-top: 90px; */
   /* border: 2px solid #363636 ; */
   /* border-radius: 6px; */
 }
-.ant-col-offset-2 div{
+.ant-col-offset-2 div {
   border-radius: 6px;
 }
-.ant-tabs-card{
-  border: 2px solid #363636 ;
+.ant-tabs-card {
+  border: 2px solid #363636;
 }
-.ant-tabs-tab{
+.ant-tabs-tab {
   border: none !important;
 }
-.ant-tabs-ink-bar{
+.ant-tabs-ink-bar {
   display: none !important;
-} 
+}
 /* .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
 /* .ant-tabs-tab-btn{
   color: #FFFFFF !important;
 } */
-button.nav-link{
+button.nav-link {
   width: 50% !important;
   font-weight: 900;
   font-size: 1.1rem;
@@ -55,7 +55,7 @@ button.nav-link{
   border-radius: 0px;
   /* color: #FFFFFF !important; */
 }
-button.active{
+button.active {
   background-color: #363636 !important;
   border: none !important;
   /* color: white !important; */
@@ -67,7 +67,7 @@ button.active{
 .active.sell{
   border-top: 4px solid #eb5b3c !important;
 }
-.nav-tabs{
+.nav-tabs {
   border-bottom: none !important;
 }
 .App-logo {
