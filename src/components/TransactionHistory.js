@@ -29,21 +29,21 @@ export default function TransactionHistory(props) {
   //   //     }
   //   // }
   // }
-  useEffect(() => {
-    let temp = [];
-    allTrade?.map((item, index) => {
-      temp.push({
-        key: item.id,
-        type: item.type,
-        user1: item.user1.name,
-        user2: item.user2.name,
-        quantity: item.quantity,
+  // useEffect(() => {
+  //   let temp = [];
+  //   allTrade?.map((item, index) => {
+  //     temp.push({
+  //       key: item.id,
+  //       type: item.type,
+  //       user1: item.user1.name,
+  //       user2: item.user2.name,
+  //       quantity: item.quantity,
 
-      })
-    })
-    setData(temp);
-    console.log("daasdfasdfasta", data);
-  }, [allTrade])
+  //     })
+  //   })
+  //   setData(temp);
+  //   console.log("daasdfasdfasta", data);
+  // }, [allTrade])
   const columns = [
     {
       title: 'Type',

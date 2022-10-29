@@ -64,7 +64,9 @@ const Buysell = () => {
         
       })
       .catch(err => {
-        console.log("In er",err);
+        console.log("In er",err.response.data.message);
+        // toast.error("Trade Failed");
+        toast.error(err.response.data.message);
         if(err.response)
         toast.error(err.response.message);
         else

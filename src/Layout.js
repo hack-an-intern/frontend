@@ -76,7 +76,7 @@ const Container = () => {
                 </Typography.Title>
               </Row>
 
-              <Graph />
+              {/* <Graph /> */}
             </Col>
             <Col style={{marginTop: '67px'}} offset={1} span={6}>
               {/* <Graph/> */}
