@@ -3,7 +3,7 @@ import { Table, Typography } from 'antd'
 import API from '../api';
 import { useSelector } from 'react-redux';
 export default function TransactionHistory(props) {
-
+  let allTrade = useSelector(state => state.user.trade);
   const [data, setData] = useState([
     {
       key: '1',
@@ -20,32 +20,30 @@ export default function TransactionHistory(props) {
       quantity: '50',
     },
   ])
-  let users = useSelector((state) => state.user.data)
-  const findusrbyid = (id) => {
-    // for(let i=0;i<users.length;i++){
-    //   if(users[i].id == id)
-    //     {
-    //       return users[i].name;
-    //     }
-    // }
-  }
+  // let users = useSelector((state) => state.user.data)
+  // const findusrbyid = (id) => {
+  //   // for(let i=0;i<users.length;i++){
+  //   //   if(users[i].id == id)
+  //   //     {
+  //   //       return users[i].name;
+  //   //     }
+  //   // }
+  // }
   useEffect(() => {
-    API.get("/tradehistory/")
-      .then(res => {
-        console.log("sdf", res.data)
-        // let rec_data = res.data[0];
-        let data = res.data;
-        for (let i = 0; i < data.length; i++) {
+    let temp = [];
+    allTrade?.map((item, index) => {
+      temp.push({
+        key: item.id,
+        type: item.type,
+        user1: item.user1.name,
+        user2: item.user2.name,
+        quantity: item.quantity,
 
-          data[i].user1 = data[i].user1?.name
-          data[i].user2 = data[i].user2?.name
-        }
-        setData(data);
       })
-      .catch(err => {
-        console.log(err);
-      })
-  }, [])
+    })
+    setData(temp);
+    console.log("daasdfasdfasta", data);
+  }, [allTrade])
   const columns = [
     {
       title: 'Type',

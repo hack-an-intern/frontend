@@ -11,16 +11,11 @@ function App(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
   const [dataSource, setDataSource] = useState(null);
-
+  let allUser = useSelector(state => state.user.data);
   useEffect(() => {
     // dispatch(getUserdata());
-    API.get('/users')
-      .then(res => {
-
-        setDataSource(res.data);
-      })
-      .catch(err => { console.log(err) })
-  }, [])
+    setDataSource(allUser);
+  }, [allUser]);
 
   const columns = [
     {

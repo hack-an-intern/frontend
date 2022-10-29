@@ -1,7 +1,8 @@
 import {
-    USER_CHECK_REQUEST,
     USER_CHECK_SUCCESS,
-    USER_CHECK_FAILURE,
+    CURRENT_MARKET_PRICE_REQUEST,
+    TRADE_HISTORY_REQUEST,
+    LIMIT_ORDER_REQUEST
 
 } from './userType'
 
@@ -14,20 +15,26 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-        case USER_CHECK_REQUEST:
-            return {
-                ...state,
-                data: null
-            }
+
         case USER_CHECK_SUCCESS:
             return {
                 ...state,
                 data: action.payload
             }
-        case USER_CHECK_FAILURE:
+        case CURRENT_MARKET_PRICE_REQUEST:
             return {
                 ...state,
-                data: null
+                price: action.payload
+            }
+        case TRADE_HISTORY_REQUEST:
+            return {
+                ...state,
+                trade: action.payload
+            }
+        case LIMIT_ORDER_REQUEST:
+            return {
+                ...state,
+                limit: action.payload
             }
         default:
             return state;
