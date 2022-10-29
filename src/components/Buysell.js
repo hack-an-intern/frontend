@@ -62,6 +62,10 @@ const Buysell = () => {
         console.log(err);
       })
   }
+  let items = [
+    { label: 'Buy', value: 'buy', key: 'buy', children: <Buyui/> },
+    { label: 'Sell', value: 'sell', key: 'sell', children: <Buyui/> },    
+  ];
   return <div style={{backgroundColor:"#363636",paddingBottom:"20px"}} >
      <div style={{backgroundColor:"#363636"}}>
     <>
