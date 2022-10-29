@@ -21,7 +21,7 @@ const Buyui = () => {
 
 
 
-  const usersList = useSelector(state => state.user);
+  const usersList = useSelector(state => state.user.data);
   const onChange = (value) => {
     console.log(`selected ${value}`);
   };
@@ -55,11 +55,13 @@ const Buyui = () => {
           filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
         >
           {/* <Option value="jack">Jack</Option>
-        <Option value="lucy">Lucy</Option>
-        <Option value="tom">Tom</Option> */}
-          {
-            usersList.map((user, index) => { return <Option value={user.id} key={index}>{user.name}</Option> }
-            )
+          <Option value="lucy">Lucy</Option>
+          <Option value="tom">Tom</Option> */}
+          {usersList ?
+            (usersList.map((user, index) => { return <Option value={user.id} key={index}>{user.name}</Option> }
+            )) : <><Option value="jack">Jack</Option>
+              <Option value="lucy">Lucy</Option>
+              <Option value="tom">Tom</Option></>
           }
 
 
