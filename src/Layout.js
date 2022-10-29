@@ -78,16 +78,16 @@ const Container = () => {
 
               <Graph />
             </Col>
-            <Col offset={1} span={6}>
+            <Col style={{marginTop: '67px'}} offset={1} span={6}>
               {/* <Graph/> */}
               <Trade />
             </Col>
           </Row>
           <Row align='top' style={{marginTop: '30px'}}>
-            <Col span={9}>
+            <Col span={10}>
               <OrderBook  height={300}/>
             </Col>
-            <Col offset={1} span={6}>
+            <Col offset={1} span={5}>
               {/* <Graph/> */}
               <TransactionHistory height={300} />
             </Col>

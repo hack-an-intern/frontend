@@ -60,7 +60,7 @@ function App(props) {
   const dispatch = useDispatch();
 
   return (
-    <div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '10px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
+    <div style={{ backgroundColor: "#363636", padding: '20px' }}><Typography.Title level={2} style={{ textAlign: 'center', marginBottom: '45px', color: '#FFFFFF', }}>User Portfolio</Typography.Title>
       {/* <header className="App-header"> */}
       <ToastContainer
         position="top-right"
