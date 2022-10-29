@@ -6,27 +6,41 @@ import Trade from './components/Trade';
 import OrderBook from './components/OrderBook';
 import TransactionHistory from './components/TransactionHistory';
 import UserPortfolio from './components/UserPortfolio'
-import API from './api';
+import { useSelector } from 'react-redux';
 // import Portfolio from './components/Portfolio'
 
 const { Header, Content, Footer } = Layout;
 const Container = () => {
-
+  const priceData = useSelector((state) => state.user.price);
   const [price, setPrice] = useState(0);
   const [pc, setPc] = useState(0);
+  const [color, setColor] = useState('green');
 
   useEffect(() => {
-    API.get('/price/').then((res) => {
-      console.log("datasdfasdfasa", res.data);
-      const dp = res.data;
-      setPrice(dp[dp.length - 1].price);
+    if (!priceData)
+      return;
+    const dp = priceData;
+    setPrice(dp[dp.length - 1].price);
 
-      if (dp.length > 1) {
-        setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
-      }
-    });
+    if (dp.length > 1) {
 
-  }, []);
+      setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
+    }
+
+
+  }, [priceData]);
+  // useEffect(() => {
+  //   API.get('/price/').then((res) => {
+  //     console.log("datasdfasdfasa", res.data);
+  //     const dp = res.data;
+  //     setPrice(dp[dp.length - 1].price);
+
+  //     if (dp.length > 1) {
+  //       setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
+  //     }
+  //   });
+
+  // }, []);
 
 
 
@@ -71,8 +85,8 @@ const Container = () => {
                 <Typography.Title level={1} style={{ margin: 0, color: '#FFFFFF' }}>
                   ₹ {price}
                 </Typography.Title>
-                <Typography.Title level={6} style={{ color: '#00d09c', fontSize: '1rem', fontWeight: 'normal', margin: 0 }}>
-                  +{ }({Math.round((pc + Number.EPSILON) * 100) / 100}%)
+                <Typography.Title level={6} style={{ color: '#FFFFFF', fontSize: '1rem', fontWeight: 'normal', margin: 0 }}>
+                  { }{Math.round((pc + Number.EPSILON) * 100) / 100}%
                 </Typography.Title>
               </Row>
 
