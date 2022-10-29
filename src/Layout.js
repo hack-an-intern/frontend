@@ -41,10 +41,10 @@ const Container = () => (
       </Breadcrumb>
       <div className="site-layout-content">
         <Row>
-          <Col span={18}>
+          <Col span={16}>
             <Graph />
           </Col>
-          <Col span={6} style={{ padding: "30px" }}>
+          <Col offset={2} span={6}>
             {/* <Graph/> */}
             <Buysell />
           </Col>
