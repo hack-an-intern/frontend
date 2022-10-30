@@ -5,7 +5,7 @@ export default function Graph_new() {
     let price = useSelector(state => state.user.price);
     console.log("price", price);
     price = price? (price.map((x) => {
-        return { ...x, time: Date.parse(x.time) }
+        return { ...x, time: new Date(x.time), name:(new Date(x.time)).getHours()+":"+(new Date(x.time)).getMinutes()+":"+(new Date(x.time)).getSeconds()  }
     })):[]
     const data = [
         {
@@ -68,9 +68,9 @@ export default function Graph_new() {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip payload={[{ name: '05-01', value: 12, unit: 'kg' }]}/>
           <Legend />
-          <Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" strokeWidth={3} dataKey="price" stroke="#00d09c" activeDot={{ r: 8 }} />
         </LineChart>
       </ResponsiveContainer>
   )

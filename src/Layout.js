@@ -81,7 +81,7 @@ const Container = (props) => {
           <Row>                <Typography.Title level={3} style={{ fontWeight: 'normal', color: '#FFFFFF', margin: 0 }}>
             Market Price
           </Typography.Title></Row>
-          <Row>
+          <Row style={{height:'500px'}}>
             <Col span={16}>
               <Row style={{ marginBottom: "20px" }}>
                 <Typography.Title level={1} style={{ margin: 0, color: '#FFFFFF' }}>
