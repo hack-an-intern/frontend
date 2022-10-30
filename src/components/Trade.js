@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import API from '../api';
 import { ToastContainer, toast } from 'react-toastify';
+import { getUserdata, getMarketPrice, getLimitOrder, getTradeHistory } from '../redux/features/user/userThunk';
 // import { Toast } from 'react-toastify/dist/components';
 
 const { Option } = Select;
@@ -30,6 +31,7 @@ const Buysell = (props) => {
   const [tradetype, setTradeType] = useState('buy');
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
+  const dispatch = useDispatch();
 
   const usersList = useSelector(state => state.user.data);
   // const onChange = (value) => {
@@ -61,7 +63,11 @@ const Buysell = (props) => {
         console.log(res);
         // window.location.reload();
         toast.success("Trade Successful");
-        props.inc();
+        // props.inc();
+        dispatch(getUserdata());
+        dispatch(getMarketPrice());
+        dispatch(getLimitOrder());
+        dispatch(getTradeHistory());
         
       })
       .catch(err => {

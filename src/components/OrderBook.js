@@ -5,6 +5,7 @@ import API from '../api';
 import { toast, ToastContainer } from "react-toastify";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from 'react-redux';
+import { getUserdata, getMarketPrice, getLimitOrder, getTradeHistory } from '../redux/features/user/userThunk';
 
 const App = (props) => {
   // const [isEditing, setIsEditing] = useState(false);
@@ -20,12 +21,14 @@ const App = (props) => {
   const showPopconfirm = () => {
 
   }
+  const dispatch = useDispatch();
+
   const confirmDelete = (x) => {
     console.log("id = ", x);
     API.delete(`/limitorder/${x}/`)
       .then(res => {
         toast.success("Order deleted successfully");
-        props.inc();
+        dispatch(getLimitOrder());
       })
       .catch(err => {
         console.log(err);
