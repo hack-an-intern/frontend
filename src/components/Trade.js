@@ -162,7 +162,7 @@ const Buysell = (props) => {
         <Button size={"large"} onClick={handleSubmit} style={{ width: '100%' }} type="primary">Confirm Transaction</Button>
       </Row>
     </div>
-    <ToastContainer />
+    {/* <ToastContainer /> */}
   </div>
 }
 
