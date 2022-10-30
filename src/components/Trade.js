@@ -57,6 +57,11 @@ const Buysell = (props) => {
     }
 
     console.log(data);
+    setId();
+    setOrderType('limit');
+    setTradeType('buy');
+    setQuantity(0);
+    setPrice(0);
     toast.warn("order is being processed please wait");
     API.post('/trade', data)
       .then(res => {
