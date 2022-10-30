@@ -1,4 +1,4 @@
-import { Breadcrumb, Layout, Menu, Typography } from 'antd';
+import { Breadcrumb, Layout, Menu, Typography, Radio } from 'antd';
 import React, { Component, useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import { Graph } from './components/Graph';
@@ -17,7 +17,7 @@ const Container = (props) => {
   const [price, setPrice] = useState(0);
   const [pc, setPc] = useState(0);
   const [color, setColor] = useState('green');
-
+  const [chart, setChart] = useState('a');
   useEffect(() => {
     if (!priceData)
       return;
@@ -59,7 +59,7 @@ const Container = (props) => {
           defaultSelectedKeys={['2']}
           style={{ fontWeight: '900', color: 'white' }}
         />
-        <Typography.Title level={3} style={{color: "#FFFFFF", textAlign: 'center', marginTop: '0.7em' }}>it_works_on_local</Typography.Title>
+        <Typography.Title level={3} style={{ color: "#FFFFFF", textAlign: 'center', marginTop: '0.7em' }}>it_works_on_local</Typography.Title>
       </Header>
       <Content
         style={{
@@ -81,7 +81,7 @@ const Container = (props) => {
           <Row>                <Typography.Title level={3} style={{ fontWeight: 'normal', color: '#FFFFFF', margin: 0 }}>
             Market Price
           </Typography.Title></Row>
-          <Row style={{height:'500px'}}>
+          <Row style={{ height: '500px' }}>
             <Col span={16}>
               <Row style={{ marginBottom: "20px" }}>
                 <Typography.Title level={1} style={{ margin: 0, color: '#FFFFFF' }}>
@@ -91,8 +91,12 @@ const Container = (props) => {
                   { }{Math.round((pc + Number.EPSILON) * 100) / 100}%
                 </Typography.Title>
               </Row>
-
-              <Graph_new />
+              {chart=="a" && <Graph_new />}
+              {chart=="b" && <iframe style={{width: '100%', height: '80%'}} src={"https://mucchu.github.io/chart/"}></iframe>}
+              <Radio.Group defaultValue="a" value={chart} onChange={(e)=>setChart(e.target.value)} buttonStyle="solid">
+                <Radio.Button value="a">Stock pice</Radio.Button>
+                <Radio.Button value="b">Real time crypto price</Radio.Button>
+              </Radio.Group>
             </Col>
             <Col style={{ marginTop: '67px' }} offset={1} span={6}>
               {/* <Graph/> */}
@@ -105,11 +109,11 @@ const Container = (props) => {
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <TransactionHistory height={300} inc={props.inc}/>
+              <TransactionHistory height={300} inc={props.inc} />
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <UserPortfolio height={300} inc={props.inc}/>
+              <UserPortfolio height={300} inc={props.inc} />
             </Col>
           </Row>
         </div>
