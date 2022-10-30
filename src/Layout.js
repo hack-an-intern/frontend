@@ -59,7 +59,7 @@ const Container = (props) => {
           defaultSelectedKeys={['2']}
           style={{ fontWeight: '900', color: 'white' }}
         />
-        KSE
+        <Typography.Title level={3} style={{color: "#FFFFFF", textAlign: 'center', marginTop: '0.7em' }}>it_works_on_local</Typography.Title>
       </Header>
       <Content
         style={{
