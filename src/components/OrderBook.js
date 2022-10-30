@@ -29,6 +29,13 @@ const App = (props) => {
       .then(res => {
         toast.success("Order deleted successfully");
         dispatch(getLimitOrder());
+        dispatch(getTradeHistory());
+        dispatch(getMarketPrice());
+        dispatch(getUserdata());
+
+
+
+
       })
       .catch(err => {
         console.log(err);

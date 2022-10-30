@@ -32,7 +32,7 @@ export function getTradeHistory() {
     return (dispatch, getState) => {
         API.get('/tradehistory/')
             .then(res => {
-                dispatch(user.tradeHistory(res.data));
+                dispatch(user.tradeHistory(res.data.reverse()));
             })
             .catch(err => {
                 console.log(err);
