@@ -209,7 +209,7 @@ const App = (props) => {
         </Col>
         <Col offset={2} style={{ textAlign: 'center' }} span={11}>
           <Typography.Title level={5} style={{ marginBottom: '10px', color: '#FFFFFF', }}>Sell Orders</Typography.Title>
-          <Table scroll={{ y: props.height }} pagination={false} columns={columns} dataSource={dataSell.reverse()} />
+          <Table scroll={{ y: props.height }} pagination={false} columns={columns} dataSource={dataSell} />
         </Col>
       </Row>
     </div>
