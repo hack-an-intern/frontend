@@ -64,18 +64,24 @@ const Buysell = (props) => {
         // window.location.reload();
         toast.success("Trade Successful");
         // props.inc();
+        // toast.success("Trade Successful");
+        if (res.data.message)
+          toast.success(res.data.message);
+        else
+          toast.success("Trade Successful");
+
         dispatch(getUserdata());
         dispatch(getMarketPrice());
         dispatch(getLimitOrder());
         dispatch(getTradeHistory());
-        
+
       })
       .catch(err => {
-        console.log("In er",err.response.data.message);
+        console.log("In er", err.response.data.message);
         // toast.error("Trade Failed");
         toast.error(err.response.data.message);
-        if(err.response)
-        toast.error(err.response.message);
+        if (err.response)
+          toast.error(err.response.message);
         else
         toast.error("Something went wrong");
         props.inc();
@@ -99,8 +105,8 @@ const Buysell = (props) => {
       </Tabs> */}
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button onClick={() => setTradeType("buy")} style={{color: '#00d09c'}} class="nav-link active buy" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Buy</button>
-            <button onClick={() => setTradeType("sell")} style={{color: '#eb5b3c'}} class="nav-link sell" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Sell</button>
+            <button onClick={() => setTradeType("buy")} style={{ color: '#00d09c' }} class="nav-link active buy" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Buy</button>
+            <button onClick={() => setTradeType("sell")} style={{ color: '#eb5b3c' }} class="nav-link sell" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Sell</button>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
