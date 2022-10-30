@@ -2,6 +2,8 @@ import { Breadcrumb, Layout, Menu, Typography } from 'antd';
 import React, { Component, useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import { Graph } from './components/Graph';
+import GGraph from './components/GGraph';
+import Graph_new from './components/Graph_new';
 import Trade from './components/Trade';
 import OrderBook from './components/OrderBook';
 import TransactionHistory from './components/TransactionHistory';
@@ -90,7 +92,7 @@ const Container = (props) => {
                 </Typography.Title>
               </Row>
 
-              {/* <Graph /> */}
+              <Graph_new />
             </Col>
             <Col style={{ marginTop: '67px' }} offset={1} span={6}>
               {/* <Graph/> */}

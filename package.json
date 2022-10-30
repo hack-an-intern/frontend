@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@craco/craco": "^6.4.5",
+    "@groww-tech/react-charts": "^0.0.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-stockcharts": "^0.7.8",
     "react-toastify": "^9.0.8",
+    "recharts": "^2.1.16",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
