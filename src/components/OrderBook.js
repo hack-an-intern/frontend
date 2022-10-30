@@ -25,10 +25,12 @@ const App = (props) => {
     API.delete(`/limitorder/${x}/`)
       .then(res => {
         toast.success("Order deleted successfully");
+        props.inc();
       })
       .catch(err => {
         console.log(err);
         toast.error("Error deleting order");
+        props.inc();
       })
   }
   const columns = [

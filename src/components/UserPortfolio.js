@@ -15,7 +15,7 @@ function App(props) {
   useEffect(() => {
     // dispatch(getUserdata());
     setDataSource(allUser);
-  }, [allUser]);
+  }, [allUser, props.inc]);
 
   const columns = [
     {
@@ -95,9 +95,11 @@ function App(props) {
             API.put(`/users/${editingStudent.id}/`, editingStudent)
               .then(res => {
                 toast.success("User updated successfully")
+                props.inc();
               })
               .catch(err => {
                 toast.error("Error updating user")
+                props.inc();
               });
             return newdata;
           });

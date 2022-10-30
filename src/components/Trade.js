@@ -23,7 +23,7 @@ const defaultProps = {};
 const Buyui = () => {
 
 }
-const Buysell = () => {
+const Buysell = (props) => {
 
   const [id, setId] = useState();
   const [ordertype, setOrderType] = useState('limit');
@@ -61,6 +61,7 @@ const Buysell = () => {
         console.log(res);
         // window.location.reload();
         toast.success("Trade Successful");
+        props.inc();
         
       })
       .catch(err => {
@@ -71,6 +72,8 @@ const Buysell = () => {
         toast.error(err.response.message);
         else
         toast.error("Something went wrong");
+        props.inc();
+
       })
   }
   let items = [

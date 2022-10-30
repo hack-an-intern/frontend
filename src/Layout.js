@@ -10,7 +10,7 @@ import API from './api';
 // import Portfolio from './components/Portfolio'
 
 const { Header, Content, Footer } = Layout;
-const Container = () => {
+const Container = (props) => {
 
   const [price, setPrice] = useState(0);
   const [pc, setPc] = useState(0);
@@ -26,7 +26,7 @@ const Container = () => {
       }
     });
 
-  }, []);
+  }, [props.inc]);
 
 
 
@@ -80,20 +80,20 @@ const Container = () => {
             </Col>
             <Col style={{ marginTop: '67px' }} offset={1} span={6}>
               {/* <Graph/> */}
-              <Trade />
+              <Trade inc={props.inc} />
             </Col>
           </Row>
           <Row align='top' style={{ marginTop: '30px' }}>
             <Col span={10}>
-              <OrderBook height={300} />
+              <OrderBook height={300} inc={props.inc} />
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <TransactionHistory height={300} />
+              <TransactionHistory height={300} inc={props.inc}/>
             </Col>
             <Col offset={1} span={5}>
               {/* <Graph/> */}
-              <UserPortfolio height={300} />
+              <UserPortfolio height={300} inc={props.inc}/>
             </Col>
           </Row>
         </div>

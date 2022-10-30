@@ -9,6 +9,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast, ToastContainer } from "react-toastify";
 import { useEffect, useState } from 'react';
 function App() {
+  const [update, setUpdate] = useState(0);
+  const incupdate = () => {
+    setUpdate(update + 1);
+  }
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserdata());
@@ -16,10 +20,10 @@ function App() {
     dispatch(getLimitOrder());
     dispatch(getTradeHistory());
 
-  }, []);
+  }, [update]);
   return (
     <>
-      <Container />
+      <Container inc={incupdate} />
       {/* <Row>
         <Col span={12}>
           <Graph/>
