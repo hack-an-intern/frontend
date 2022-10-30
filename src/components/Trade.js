@@ -65,10 +65,10 @@ const Buysell = (props) => {
         toast.success("Trade Successful");
         // props.inc();
         // toast.success("Trade Successful");
-        if (res.data.message)
-          toast.success(res.data.message);
-        else
-          toast.success("Trade Successful");
+        // if (res.data.message)
+        //   toast.success(res.data.message);
+        // else
+        //   toast.success("Trade Successful");
 
         dispatch(getUserdata());
         dispatch(getMarketPrice());
