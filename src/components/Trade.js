@@ -56,12 +56,7 @@ const Buysell = (props) => {
       id, ordertype, tradetype, quantity, price
     }
 
-    console.log(data);
-    setId();
-    setOrderType('limit');
-    setTradeType('buy');
-    setQuantity(0);
-    setPrice(0);
+
     toast.warn("order is being processed please wait");
     API.post('/trade', data)
       .then(res => {
@@ -88,7 +83,7 @@ const Buysell = (props) => {
         if (err.response)
           toast.error(err.response.message);
         else
-        toast.error("Something went wrong");
+          toast.error("Something went wrong");
         props.inc();
 
       })
