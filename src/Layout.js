@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 
 const { Header, Content, Footer } = Layout;
 const Container = (props) => {
-  const priceData = useSelector((state) => state.user.price);
+  const priceData = useSelector((state) => state.user?.price);
   const [price, setPrice] = useState(0);
   const [pc, setPc] = useState(0);
   const [color, setColor] = useState('green');
@@ -22,11 +22,11 @@ const Container = (props) => {
     if (!priceData)
       return;
     const dp = priceData;
-    setPrice(dp[dp.length - 1].price);
+    setPrice(dp[dp.length - 1]?.price);
 
     if (dp.length > 1) {
 
-      setPc(((dp[dp.length - 1].price - dp[dp.length - 2].price) / dp[dp.length - 2].price) * 100);
+      setPc(((dp[dp.length - 1]?.price - dp[dp.length - 2]?.price) / dp[dp.length - 2]?.price) * 100);
     }
 
 
