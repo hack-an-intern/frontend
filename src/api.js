@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: `http://hackathonbackend.centralindia.cloudapp.azure.com/app1`,
+    baseURL: `https://hackathonbackend.centralindia.cloudapp.azure.com/app1`,
 });
