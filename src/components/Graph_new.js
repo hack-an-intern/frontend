@@ -66,10 +66,10 @@ export default function Graph_new() {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis style={{color: '#FFFFFF'}} dataKey="name" />
+          <XAxis dataKey="name" />
           <YAxis />
           <Tooltip payload={[{ name: '05-01', value: 12, unit: 'kg' }]}/>
-          <Legend style={{color: '#FFFFFF'}} />
+          <Legend />
           <Line type="monotone" strokeWidth={3} dataKey="price" stroke="#00d09c" activeDot={{ r: 8 }} />
         </LineChart>
       </ResponsiveContainer>
